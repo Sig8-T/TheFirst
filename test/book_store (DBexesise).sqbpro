@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/Code/work_space/test/book_store (DBexesise).db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1367"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainemployee"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="author" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="78"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="book" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="222"/><column index="3" value="140"/><column index="4" value="104"/><column index="5" value="83"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="44"/><column index="2" value="92"/><column index="3" value="88"/><column index="4" value="107"/><column index="5" value="61"/><column index="6" value="97"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="practice">--INSERT INTO user(id,name,home) VALUES(1,&quot;Takka&quot;,&quot;kagawa&quot;);
+--入れてください　「user」の「id　と　name　と　home」に　値は「1　と　Takka　と　kagawa」です。
+
+--SELECT	* FROM	user WHERE id=1;
+--取得してください　全てを　どこから？「user」　場所は？　idの1です。
+
+--UPDATE user SET name=&quot;YPP&quot; WHERE id=5;
+--更新してください　「user」を　こうしてください　「nameをYPPに」　場所は？　idの5です。
+
+--DELETE FROM user WHERE id=6;
+--消してください　どこから？「user」　場所は？　idの6です。
+</sql><sql name="DBexesise">--Task[1]
+--1.
+-- SELECT * FROM employee;
+--
+--2.
+-- SELECT first_name,last_name,kids_number FROM employee
+-- WHERE kids_number &gt;= 1;
+--
+--3.
+-- SELECT * FROM employee
+-- WHERE kids_number = 0 AND salary &gt;= 150000;
+--
+--4.
+-- SELECT *	FROM employee
+-- WHERE salary &gt;= 130000 AND salary &lt;= 150000;
+
+--Task[2]
+--1.
+-- SELECT title AS'BookTitle', publication_year AS'Year'
+-- FROM book 
+-- WHERE publication_year != 2008;
+--
+--2.
+-- SELECT * FROM author WHERE name LIKE &quot;%N%&quot;;
+--
+--3.
+-- SELECT title AS'BookTitle' FROM book WHERE title LIKE &quot;%Web%&quot;;
+
+--Task[3]
+--1.
+-- SELECT avg(kids_number) AS'AverageKids' FROM employee WHERE end_year is NULL;
+--
+--2.
+-- SELECT sum(salary) AS'TotalSalaries' FROM employee WHERE end_year is NULL;
+--
+--3.
+-- SELECT count(*) AS'WithKids' FROM employee WHERE end_year is NULL AND kids_number &gt;= 1;
+
+--Task[4]
+--1.
+-- SELECT book.title,book.publication_year,publisher.name AS'Publisher'
+-- FROM book JOIN publisher on book.publisher_id = publisher.id
+-- WHERE publisher.id = 1;
+--
+--2.
+-- SELECT book.title,book.publication_year,author.name AS'AuthorName'
+-- FROM book JOIN author on book.author_id = author.id
+-- WHERE author.id = 2;
+
+--Task[5]
+--1.
+-- SELECT AVG(salary),kids_number FROM employee GROUP by kids_number;
+-- HAVING AVG(salary) &gt; 150000;
+
+--Task[6]
+--1.
+-- SELECT first_name,last_name
+-- FROM employee
+-- WHERE salary &gt; (SELECT AVG(salary) FROM employee);
+--
+--2.
+-- SELECT title,publication_year FROM book
+-- WHERE publication_year &gt;= (SELECT publication_year FROM book WHERE title = &quot;面倒な仕事はPythonにやらせる&quot;);
+
+--Task[7]
+--1.
+-- SELECT first_name,last_name,kids_number FROM employee ORDER BY kids_number DESC;
+--
+--2.
+-- SELECT first_name,last_name FROM employee ORDER by salary LIMIT 5;</sql><current_tab id="1"/></tab_sql></sqlb_project>

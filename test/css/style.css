@@ -1,0 +1,84 @@
+/* .c1{
+    color: violet;
+}
+
+.c2{
+    color: green;
+}
+
+.c3{
+    color: pink;
+}
+
+.red{
+    color: red;
+}
+
+#gold{
+    color: gold;
+} */
+
+.block1{
+    background-color: chocolate;
+    height: 50px;
+    width: 50px;
+}
+
+.block2{
+    background-color: orange;
+}
+
+a{
+    background-color: yellowgreen;
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+
+/* .dn {
+    background-color: red;
+    display: none;
+}
+
+.vh {
+    background-color: cyan;
+    visibility: hidden;
+} 
+これはブラウザ上から消すことを学んだ時のもの*/
+
+h1{
+    color: red;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-evenly;
+}
+.flexbox p{
+    background-color: silver;
+    height: 50px;
+    width: 50px;
+}
+
+.box0{
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#red{
+    background-color: red;
+}
+
+.box1{
+    color: azure;    
+}
+
+#purple{
+    background-color: purple;
+}
+
+.box2{
+    color: ivory;
+}
